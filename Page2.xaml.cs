@@ -4,7 +4,7 @@ namespace MauiAppRepro1;
 
 public partial class Page2 : ContentPage
 {
-	public ObservableCollection<string> Values { get; set; } = new();
+	public ObservableCollection<Foo> FooImages { get; set; } = new();
 
 	public Page2()
 	{
@@ -15,11 +15,13 @@ public partial class Page2 : ContentPage
 
 	private async void Button_Pressed(object sender, EventArgs e)
 	{
-		Values.Clear();
+		FooImages.Clear();
 
 		await Task.Delay(1000);
 
-		for (int i = 1; i <= 5; i++)
-			Values.Add($"Item #{i}");
+		FooImages.Add(new Foo { ImagePath = "red_mm.png" });
+		FooImages.Add(new Foo { ImagePath = "yellow_mm.png" });
+		FooImages.Add(new Foo { ImagePath = "blue_mm.png" });
+		FooImages.Add(new Foo { ImagePath = "orange_mm.png" });
     }
 }

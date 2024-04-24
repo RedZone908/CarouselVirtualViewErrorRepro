@@ -30,8 +30,8 @@
 
             <Button
                 x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
+                Text="Go to page with CarouselView"
+                SemanticProperties.Hint="Goes to page with CarouselView"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 

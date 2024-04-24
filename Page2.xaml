@@ -4,25 +4,19 @@
              xmlns:local="clr-namespace:MauiAppRepro1"
              x:Class="MauiAppRepro1.Page2"
              x:DataType="local:Page2"
-             Title="Page2">
+             Title="Page2"
+             x:Name="this"
+             BindingContext="{x:Reference this}">
     <VerticalStackLayout>
-
-        <CollectionView ItemsSource="{Binding Values}">
-            
-            <CollectionView.EmptyView>
-                <ContentView>
-                    <Label Text="No items"
-                           FontAttributes="Bold" />
-                </ContentView>
-            </CollectionView.EmptyView>
-            
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="x:String">
-                    <Label Text="{Binding .}" />
+        <CarouselView ItemsSource="{Binding FooImages}" MaximumHeightRequest="150">
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="local:Foo">
+                    <VerticalStackLayout>
+                        <Image Source="{Binding ImagePath}" />
+                    </VerticalStackLayout>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
-            
-        </CollectionView>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
 
         <Button
             Text="Load items"
